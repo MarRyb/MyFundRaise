@@ -1,0 +1,30 @@
+- meta title: @category.meta_title, description: @category.meta_description
+
+.category-banner-wrapper(style="#{"background-image:url(#{@category.cover})" if @category.cover_file_size}")
+	.container
+		/ = image_tag @category.foto.url(:thumb), size: "100x100"
+		%h2= @category.full_title
+		%h5= @category.description
+
+.fundraise-subheader
+	.container
+		.search-form.pull-right
+			= form_tag root_path do
+				= text_field_tag :q, params[:q], placeholder: "Введите название кампании или город.."
+				= button_tag do
+					= fa_icon :"search"
+		%ul.gutter-left--10
+			%li{ class: "#{'active' if @sorting == 'popular'}" }= link_to "Популярные", root_path(sort: :popular)
+			%li{ class: "#{'active' if @sorting == 'recent'}" }= link_to "Новые", root_path(sort: :recent)
+			%li{ class: "#{'active' if @sorting == 'almost_there'}" }= link_to "Почти собрано", root_path(sort: :almost_there)
+
+.container#fundraise-container
+	.main-table
+		.sidebar-wrapper
+			#categories-wrapper= render 'shared/categories'
+			= render 'shared/adsense_left'
+		.main-wrapper.with-sidebar
+			.campaigns-row
+				= render @campaigns
+				.pagination
+					= link_to_next_page @campaigns, "Посмотреть еще"

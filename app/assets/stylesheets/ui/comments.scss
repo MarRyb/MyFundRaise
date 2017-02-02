@@ -1,0 +1,136 @@
+#comments-list {
+	margin: 30px 0 50px;
+	.comment {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid #ddd;
+
+		&:last-child {
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+
+		.comment-author {
+			font-family: "Open Sans";
+			font-weight: 300;
+			color: #666;
+
+			img {
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+			}
+			span {
+				vertical-align: middle;
+				display: inline-block;
+				line-height: 1;
+				font-size: 11px;
+				margin-left: 5px;
+				color: #999;
+				a {
+					color: #666;
+					font-weight: 400;
+					text-decoration: none !important;
+					display: block;
+					margin-bottom: 5px;
+					white-space: nowrap;
+					font-size: 14px;
+				}
+			}
+		}
+		.comment-text {
+			// font-family: Open Sans;
+			// font-size: 13px;
+			// font-weight: 300;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: normal !important;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-text-size-adjust: 100%;
+			margin-top: 10px;
+			color: #666;
+		}
+
+		.share-info {
+			float: right;
+			line-height: 40px;
+			a {
+				font-weight: 300;
+				text-decoration: none;
+				color: #666;
+				&:hover, &:active, &:focus {
+					color: #666;
+				}
+			}
+		}
+	}
+}
+
+.share-info.new-style {
+	position: relative;
+	.campaign-shares {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    padding-right: 15px;
+		a {
+			color: white;
+			background: rgba(#000, .5);
+			font-size: 20px;
+			b {
+				color: white;
+			}
+		}
+	}
+}
+
+
+.campaign-vk-share {
+	background: #507299 !important;
+	border: none !important;
+	text-align: left;
+	&:hover, &:active, &:focus {
+		background: #486991 !important;
+	}
+	.fa {
+		display: inline-block;
+		font-size: 18px;
+		width: 20px;
+		text-align: center;
+		margin-left: -15px;
+		margin-right: 5px;
+	}
+}
+.campaign-ok-share {
+	background: #ee8208 !important;
+	border: none !important;
+	text-align: left;
+	&:hover, &:active, &:focus {
+		background: #e26000 !important;
+	}
+	.fa {
+		display: inline-block;
+		font-size: 18px;
+		width: 20px;
+		text-align: center;
+		margin-left: -15px;
+		margin-right: 5px;
+	}
+}
+.campaign-twitter-share {
+	text-align: left;
+	background: rgb(29, 161, 242) !important;
+	border: none !important;
+	&:hover, &:active, &:focus {
+		background: rgb(0, 132, 180) !important;
+	}
+	.fa {
+		display: inline-block;
+		font-size: 18px;
+		width: 20px;
+		text-align: center;
+		margin-left: -15px;
+		margin-right: 5px;
+	}
+}

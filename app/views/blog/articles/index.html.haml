@@ -1,0 +1,12 @@
+- meta title: "Блог - MyFundraise"
+
+.page-header.gutter-top-0
+  %h1.gutter-top-0 Блог
+
+- @articles.in_groups_of(2).each do |articles_group|
+  - articles_group.each do |article|
+    = render article if article
+  = render 'layouts/ad_block'
+  %hr
+
+= link_to_next_page @articles, "Показать еще", class: "btn btn-primary"

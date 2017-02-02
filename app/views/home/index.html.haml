@@ -1,0 +1,47 @@
+- meta title: "MyFundraise: платформа №1 в СНГ для личного сбора средств в интернете", description: "Первая платформа для личного сбора средств в Рунете:медицина, волонтерство,события, образование и другое.  MyFundraise – это возможность собрать деньги на все, что хочешь."
+
+.banner-wrapper
+	%video#video(autoplay="autoplay" loop="loop")
+		%source.mp4(src="/videos/video.mp4")
+		%source.webm(src="/videos/video.webm")
+		%source.ogg(src="/videos/video.ogg")
+	.text
+		%h2
+			%b Fundraising
+			для каждого!
+		%h5
+			%u Сайт №1
+			для личного сбора средств
+		- if user_signed_in?
+			= link_to "Собрать деньги", new_dashboard_campaign_path, class: 'btn btn-lg'
+		- else
+			= link_to "Собрать деньги", '#', class: "btn btn-lg", data: { toggle: "modal", target: "#sign_up" }
+/ = render 'shared/partners'
+
+
+.fundraise-subheader
+	.container
+		.search-form.pull-right
+			= form_tag root_path, method: :get do
+				= hidden_field_tag :sort, @sorting
+				= text_field_tag :q, params[:q], placeholder: "Введите название кампании или город.."
+				= button_tag name: nil do
+					= fa_icon :"search"
+		%ul.gutter-left--10
+			%li{ class: "#{'active' if @sorting == 'popular'}" }= link_to "Популярные", root_path(sort: :popular)
+			%li{ class: "#{'active' if @sorting == 'recent'}" }= link_to "Новые", root_path(sort: :recent)
+			%li{ class: "#{'active' if @sorting == 'almost_there'}" }= link_to "Почти собрано", root_path(sort: :almost_there)
+
+
+.container#fundraise-container
+	.main-table
+		.sidebar-wrapper
+			#categories-wrapper= render 'shared/categories'
+		.main-wrapper.with-sidebar
+			.campaigns-row= render @campaigns
+			- if @search
+				.pagination
+					= link_to_next_page @campaigns, "Посмотреть еще"
+			= render 'layouts/ad_block'
+
+= render 'shared/partners'

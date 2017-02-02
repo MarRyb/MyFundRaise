@@ -1,0 +1,83 @@
+.modal-content {
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	border: 0;
+
+	h2 {
+		margin-bottom: 30px;
+	}
+
+	.helper {
+		// color: #777;
+		text-align: center;
+		// font-size: 13px;
+		color: #aaa;
+		font-size: 11px;
+	}
+}
+
+.modal-dialog {
+	border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.auth-links {
+	max-width: 400px;
+	margin: 0 auto;
+
+	a, input[type=submit] {
+		display: block;
+		width: 100%;
+		border: 0;
+		line-height: 50px;
+		padding: 0 20px;
+		background: #71ab62;
+		border-radius: 3px !important;
+		margin-bottom: 15px;
+		color: white;
+		text-decoration: none !important;
+		i {
+			float: left;
+			font-size: 25px;
+			line-height: 50px;
+			vertical-align: middle;
+			margin-right: 15px;
+			width: 30px;
+			text-align: center;
+		}
+
+		&:hover, &:active, &:focus { background: lighten(#71ab62, 5%); }
+
+		&.vk {
+			background: #507299;
+			&:hover, &:active, &:focus { background: lighten(#507299, 10%); }
+		}
+		&.ok {
+			background: #ee8208;
+			&:hover, &:active, &:focus { background: lighten(#ee8208, 10%); }	
+		}
+	}
+}
+
+
+#sign_in, #sign_up {
+	font-family: Open Sans;
+	font-weight: 300;
+	.modal-dialog {
+		max-width: 450px;
+	}
+	h6 {
+		text-align: center;
+		padding: 7px !important;
+		margin: 20px -22px;
+		background: rgb(230, 230, 230) none repeat scroll 0% 0%;
+		color: rgb(102, 102, 102);
+	}
+	input {
+		border-radius: 0;
+		box-shadow: none;
+		outline: none;
+	}
+	.form-control {
+		height: 40px;
+	}
+}

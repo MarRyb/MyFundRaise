@@ -1,0 +1,35 @@
+.small-campaign-container
+	.small-campaign-block(data-campaign-id="#{campaign.id}")
+		- if campaign.is_draft?
+			._ribbon Черновик
+		.cover
+			= image_tag campaign.picture.url(:medium)
+			- if campaign.category.present?
+				.category
+					= fa_icon :"hashtag"
+					= campaign.category.title
+			.author-back
+			.author
+				= render_user_avatar_for campaign.user, image_styles: "img-circle", fake_styles: "small"
+				%span
+					= campaign.user.name
+					%span= campaign.address
+
+			- if !campaign.is_draft?
+				.share-info.info(data-campaign-id="#{campaign.id}")= render 'campaigns/counters_box', object: campaign
+
+		.percentage
+			.done(style="width:#{campaign.percentage}%")
+
+		= link_to campaign.title, campaign, class: "title"
+
+		- unless campaign.is_draft?
+			.goal
+				.goal-tab
+					%span.goal-title Собрано
+					= raw "#{construct_amount(campaign.total_amount.to_i, campaign.currency)}"
+				.goal-tab
+					%span.goal-title Цель
+					= raw "#{construct_amount(campaign.goal, campaign.currency)}"
+		- else
+			= link_to "Дополнить информацию", dashboard_campaign_steps_path(campaign, id: campaign.current_step), class: "publish"

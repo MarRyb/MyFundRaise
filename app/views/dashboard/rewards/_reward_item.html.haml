@@ -1,0 +1,8 @@
+= link_to new_donation_path(reward.campaign, amount: reward.amount), class: "reward-container" do
+  .amount
+    - unless reward.campaign.currency.sign_after_amount?
+      = raw reward.campaign.currency.sign
+    %span._amount= reward.amount
+    - if reward.campaign.currency.sign_after_amount?
+      = raw reward.campaign.currency.sign
+  .description= reward.description

@@ -1,0 +1,115 @@
+ru:
+  activerecord:
+    models:
+      user:
+        zero: Пользователей
+        one: Пользователь
+        few: Пользователей
+        many: Пользователей
+        other: Пользователи
+      category:
+        zero: Категорий
+        one: Категория
+        few: Категорий
+        many: Категорий
+        other: Категории
+      partner:
+        zero: Партнеров
+        one: Партнер
+        few: Партнеров
+        many: Партнеров
+        other: Партнеры
+      admin_user:
+        zero: Администраторов
+        one: Администратор
+        few: Администраторов
+        many: Администраторов
+        other: Администраторы
+      currency:
+        zero: Валют
+        one: Валюта
+        few: Валюты
+        many: Валют
+        other: Валюты
+      campaign:
+        zero: Кампаний
+        one: Кампания
+        few: Кампаний
+        many: Кампаний
+        other: Кампании
+      menu_item:
+        zero: Меню
+        one: Меню
+        few: Меню
+        many: Меню
+        other: Меню
+      country:
+        zero: Стран
+        one: Страна
+        few: Стран
+        many: Стран
+        other: Страны
+      city:
+        zero: Городов
+        one: Город
+        few: Городов
+        many: Городов
+        other: Города
+
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        nick: Никнейм
+        foto: Фото
+        address: Адрес
+        email: E-mail
+        password: Пароль
+        created_at: Дата регистрации
+      category:
+        title: Название
+        foto: Картинка
+        description: Описание
+        popular: Популярная?
+      partner:
+        title: Название
+        foto: Картинка
+        link: Ссылка
+      currency:
+        name: Название
+        sign: Знак
+        code: Код
+        is_enabled: Активно?
+      campaign:
+        currency: Валюта
+        category: Категория
+        user: Автор
+        goal: Цель
+        title: Название
+        photo: Фото
+        description: Описание
+        address: Адрес
+        enable_comments: Разрешить комментирование
+        is_active: Активная?
+        city: Город
+        category: Категория
+        city_id: Город
+        category_id: Категория
+      menu_item:
+        title: Название
+        link: Ссылка
+        position: Позиция
+        is_enabled: Отображать?
+      country:
+        name: Название
+        name_ru: Название (RU)
+        name_en: Название (EN)
+        alias: Алиас
+        picture: Картинка
+        cities_count: Кол-во городов
+      city:
+        name: Название
+        name_ru: Название (RU)
+        name_en: Название (EN)
+        alias: Алиас
+        country: Страна

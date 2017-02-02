@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= metamagic title: "MyFundraise" %>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,300italic&subset=latin,cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+  <%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false&libraries=places' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
+
+  <%= render 'head/scripts' %>
+</head>
+<body class="gray <%= @body_class %>">
+
+<div class="wrapper-overlay hidden"></div>
+<%= render 'shared/navbar' %>
+<%= yield %>
+<%- if @show_promo %>
+  <%= render 'shared/promo' %>
+<% end %>
+<%= render 'shared/footer' %>
+<%= render 'shared/modals' %>
+<%= render 'layouts/yandex_metrica' %>
+</body>
+</html>
